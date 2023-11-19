@@ -1,0 +1,35 @@
+<!-- historico_vendas.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Histórico de Vendas</title>
+</head>
+<body>
+    <h1>Histórico de Vendas</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Venda ID</th>
+                <th>Produto ID</th>
+                <th>Data da Venda</th>
+                <th>Quantidade</th>
+                <th>Preço Unitário</th>
+                <th>Valor Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in historico %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

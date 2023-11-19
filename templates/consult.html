@@ -1,0 +1,52 @@
+<!-- consult.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dados da Tabela</title>
+</head>
+<body>
+    <h1>Tabela de Produtos</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Cod Barras</th>
+                <th>Lote</th>
+                <th>Fabricante</th>
+                <th>Data de Fabricação</th>
+                <th>Data de Vencimento</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Observações</th>
+                <th>Quantidade a Remoção</th> <!-- Coluna para o botão Modificar -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+                <td>{{ row[9] }}</td>
+                <td>
+                    {% if row[8] > 0 %}
+                        <form action="{{ url_for('modify_quantity', product_id=row[0]) }}" method="POST">
+                            <input type="number" name="quantidade_diminuir" min="1" value="1"> <!-- Campo para inserir a quantidade -->
+                            <input type="submit" value="Modificar">
+                        </form>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

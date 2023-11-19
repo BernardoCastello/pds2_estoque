@@ -1,0 +1,31 @@
+--Requisitos necessários:
+    -Informações do produto:
+        Id INT (chave primaria)
+        Nome CHAR
+        Cód de Barras INT
+        Lote INT
+        Fabricante CHAR
+        Data de Fabricação DATE
+        Data de Vencimento DATE
+        Preço PRICE
+        Quantiddade INT
+        Observações CHAR
+
+    -Funções:
+        Adicionar ao Estoque
+        Verificar Estoque(Podendo Alterar Preço)
+        Vender do Estoque
+        Verificar Historico de Vendas do Estoque
+
+    
+    -Front:
+        HTMl
+        CSS
+
+    -Back:
+        Flask
+
+    -DB:
+        Postgre
+
+
