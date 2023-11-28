@@ -19,7 +19,7 @@ db_params = {
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('add.html')
 
 #Rota para adicionar ao estoque
 @app.route('/add', methods=['GET', 'POST'])
@@ -62,15 +62,13 @@ def modify_quantity(product_id):
 
     current_quantity = product_data[8]  # Índice 8 para a coluna 'quantidade'
 
-    if current_quantity == 0 or quantidade_diminuir >= current_quantity:
-        cursor.execute("DELETE FROM produtos WHERE id = %s", (product_id,))
-    else:
-        new_quantity = current_quantity - quantidade_diminuir
-        cursor.execute("UPDATE produtos SET quantidade = %s WHERE id = %s", (new_quantity, product_id))
+
+    new_quantity = current_quantity - quantidade_diminuir
+    cursor.execute("UPDATE produtos SET quantidade = %s WHERE id = %s", (new_quantity, product_id))
 
     # Adiciona ao histórico de vendas
     produto_id = product_data[0]  # Índice 0 para a coluna 'id' na tabela 'produtos'
-    data_venda = datetime.now().date()  # Data atual
+    data_venda = datetime.now().date()  # Data atuals
     quantidade_vendida = quantidade_diminuir
     preco_unitario = product_data[7]  # Índice 7 para a coluna 'preco'
     valor_total = preco_unitario * quantidade_vendida
