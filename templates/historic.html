@@ -4,8 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Histórico de Vendas</title>
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
+    <main id="container">
+        <aside id="left-container">
+            <ul>
+                <h1>Gerenciador de Estoque</h1>
+                <li><a href="/add">Adicionar Produto</a></li>
+                <li><a href="/consult">Consultar Estoque</a></li>
+                <li><a href="/historic">Histórico de Vendas</a></li>
+            </ul>
+        </aside>
+    <section id="right-container">
     <h1>Histórico de Vendas</h1>
     <table border="1">
         <thead>
@@ -31,5 +42,7 @@
             {% endfor %}
         </tbody>
     </table>
+</section>
+</main>
 </body>
 </html>
