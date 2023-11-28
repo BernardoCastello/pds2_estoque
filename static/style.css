@@ -1,22 +1,57 @@
-/* Adicione seus estilos CSS aqui */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #293544;
 }
 
 h1 {
     text-align: center;
+    font-family: 'Roboto', 'sans-serf';
+    color: #FFF;
 }
 
 ul {
+    
     list-style: none;
     padding: 0;
+    color: #FFF;
 }
 
 ul li {
-    margin-bottom: 10px;
+    flex: 1 1 0;
+    margin-bottom: 75px;
+    text-align: center;
 }
 
-/* Outros estilos conforme necessário */
+a{
+    color: #FFF;
+    font-size: 20px;
+}
+
+
+#container{
+    display: flex;
+    flex-direction: row;
+    color: #FFF;
+}
+
+#left-container {
+    flex: 1 1 15%;
+    min-height: 100vh;
+    background-color: #1E2A3A;
+    text-align: center;
+    padding: 30px 12px;
+    border-right: 5px solid #293544;
+}
+    
+#right-container {
+    flex: 1 1 80%;
+    min-height: 100vh;
+    background-color: #111821;
+    padding: 50px;
+}
+
+#add_prod {
+    text-align: center;
+}
